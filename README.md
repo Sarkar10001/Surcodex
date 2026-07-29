@@ -1,526 +1,191 @@
-# Surcodex
-# Project Requirement: College Coding Practice & Examination Management Platform
+# 🚀 Surcodex
 
-## Project Overview
-
-Build a full-stack web application for colleges that enables coding practice, online examinations, performance tracking, ranking systems, and academic management. The platform will support four user roles:
-
-1. Student
-2. Teacher
-3. Sub Admin (College/HOD Level)
-4. Super Admin (Platform Owner)
-
-The system should be scalable, secure, responsive, and suitable for multiple colleges.
+A modern full-stack College Coding Practice & Examination Management Platform designed to help educational institutions conduct coding practice, online examinations, contests, and student performance tracking.
 
 ---
 
-# 1. Authentication & Registration System
+## 📌 Overview
 
-## Landing Page
+Surcodex is a role-based web application that enables students to practice coding, participate in contests, take online examinations, and track their progress while allowing teachers and administrators to manage academic activities efficiently.
 
-The homepage should contain:
-
-* Login Button
-* Register Button
-
-All other platform features remain locked until login.
-
-When users click Login or Register, they must first choose:
-
-* Student
-* Teacher
+The platform is designed with scalability, security, and user experience in mind.
 
 ---
 
-# 2. Student Registration & Verification
+# ✨ Current Features
 
-### Registration Fields
+## Authentication
 
-* Full Name
-* Student ID / Roll Number
-* Department
-* Year of Study
-* College Email
-* Password
-* Confirm Password
-
-### Password Rules
-
-* Minimum 8 characters
-* Maximum 20 characters
-* At least:
-
-  * 1 uppercase letter
-  * 1 lowercase letter
-  * 1 special character
-
-### Verification Process
-
-1. Email OTP Verification
-2. Student ID Verification
-
-The system must automatically verify the student ID against the college database.
-
-Registration is approved only if:
-
-* OTP verification succeeds
-* Student ID exists in the database
-
-### Account Validity
-
-Student account validity depends on academic year:
-
-* 1st Year Student → valid for 4 years
-* 2nd Year Student → valid for 3 years
-* 3rd Year Student → valid for 2 years
-* 4th Year Student → valid until graduation
-
-Only one account can be created per student ID.
+- Student Registration
+- Teacher Registration
+- JWT Authentication
+- Secure Password Hashing
+- Login System
+- Protected Routes
 
 ---
 
-# 3. Teacher Registration & Verification
+## Student Module
 
-### Registration Fields
-
-* Full Name
-* Department
-* Subject
-* College Email
-* Password
-* Confirm Password
-
-### Verification Process
-
-1. Email OTP Verification
-2. Registration Request Generated
-
-After registration:
-
-* Teacher remains in Pending Status
-* Request appears in Sub Admin Dashboard
-
-Sub Admin can:
-
-* Approve
-* Reject
-
-Only approved teachers can access the platform.
+- Student Dashboard
+- Profile Management
+- Coding Practice
+- Programming Challenges
+- Online Quizzes
+- Contest Participation
+- Performance Tracking
 
 ---
 
-# 4. Login & Password Recovery
+## Teacher Module
 
-### Student Login
-
-* Email
-* Password
-
-### Teacher Login
-
-* Email
-* Password
-
-### Forgot Password
-
-Process:
-
-1. Verify email using OTP
-2. Create new password
-3. Previous password becomes invalid
+- Teacher Dashboard
+- Create Coding Problems
+- Create Quizzes
+- Manage Exams
+- View Student Performance
 
 ---
 
-# 5. Student Dashboard
+## Admin Module
 
-## Profile Section
-
-* Profile Picture Upload
-* Full Name (Non-editable)
-* Student ID
-* Department
-* Academic Year
-* Email
-* Account Information
-
-### Profile Actions
-
-* View History
-* Change Password
-* Delete Account
+- User Management
+- Teacher Approval
+- Student Management
+- Dashboard Analytics
 
 ---
 
-## Coding Practice Module
+## Future Features
 
-Students can:
-
-* Solve Coding Problems
-* Practice Topic-Wise
-
-Examples:
-
-* Arrays
-* Linked Lists
-* Trees
-* Graphs
-* Dynamic Programming
-* Sorting
-* Recursion
-
-Problem Difficulty:
-
-* Easy
-* Medium
-* Hard
+- Email OTP Verification
+- Student ID Verification
+- Live Coding Contests
+- Leaderboard
+- Achievement Badges
+- Judge0 Integration
+- AI Performance Analysis
+- Multi-College Support
+- Real-time Notifications
+- CSV Import
+- Plagiarism Detection
 
 ---
 
-## Live Exam & Contest Module
+# 🛠 Tech Stack
 
-Students can:
+### Frontend
 
-* Join Live Exams
-* Participate in Coding Contests
-* Attempt MCQ Quizzes
+- React 19
+- Vite
+- Tailwind CSS
+- React Router
+- Axios
+- Radix UI
+- Lucide React
 
-Teacher announcements and upcoming exams should appear in dashboard notifications.
+### Backend
 
----
-
-## Ranking & Reward System
-
-Students earn points for:
-
-* Solving problems
-* Participating in contests
-* Performing well in exams
-
-### Leaderboard
-
-Weekly Leaderboard:
-
-* Shows Top Students
-* Displays ranking and points
-
-Monthly Reset:
-
-* Rankings reset every month
-* New competition cycle begins
+- Node.js
+- Express.js
+- JWT
+- bcryptjs
+- MongoDB
+- Mongoose
 
 ---
 
-## Student Statistics
+# 📂 Project Structure
 
-### Coding Stats
-
-* Total Problems Solved
-* Current Rank
-* Total Points
-* Current Streak
-* Contest Participation Count
-* Highest Contest Rank
-
-### Skill Profile
-
-* Strong Topics
-* Preferred Programming Language
-* Easy/Medium/Hard Breakdown
-
-### Achievement System
-
-Badges such as:
-
-* First Accepted Solution
-* 7-Day Streak
-* Top 10 Contest Finisher
-* DP Master
-* Problem Solver
-
-### Activity History
-
-* Submission History
-* Contest History
-* Join Date
+```
+Surcodex
+│
+├── frontend
+│   ├── src
+│   ├── public
+│   ├── package.json
+│   └── vite.config.js
+│
+├── backend
+│   ├── src
+│   │   ├── config
+│   │   ├── controllers
+│   │   ├── middlewares
+│   │   ├── models
+│   │   ├── routes
+│   │   └── utils
+│   ├── server.js
+│   └── package.json
+│
+└── README.md
+```
 
 ---
 
-# 6. Teacher Dashboard
+# ⚙ Installation
 
-## Overview
+Clone the repository
 
-* Total Assigned Students
-* Total Problems Created
-* Active Contests
-* Pending Reviews
-* Recent Activities
+```bash
+git clone https://github.com/YOUR_USERNAME/Surcodex.git
+```
 
----
+Frontend
 
-## Problem Management
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-Teachers can:
+Backend
 
-* Create Coding Problems
-* Edit Problems
-* Delete Problems
-* Add Test Cases
-* Add Tags
-* Set Difficulty
-* Publish / Unpublish Problems
-
----
-
-## Quiz Management
-
-Teachers can:
-
-* Create MCQ Quizzes
-* Add Sections
-* Add Question Banks
-* Set Marks
-* Set Time Limits
+```bash
+cd backend
+npm install
+npm run dev
+```
 
 ---
 
-## Exam Management
+# 🔐 Environment Variables
 
-Teachers can create:
+Create a `.env` file inside the backend folder.
 
-### Section-Based Exams
+```env
+PORT=5000
 
-Example:
+MONGO_URI=your_database_url
 
-Section A:
-
-* MCQ Questions
-
-Section B:
-
-* Coding Problems
-
-Section C:
-
-* Subjective Questions (optional future feature)
-
-Features:
-
-* Timer Control
-* Start Time
-* End Time
-* Auto Submission
+JWT_SECRET=your_secret_key
+```
 
 ---
 
-## Student Monitoring
+# 🚀 Roadmap
 
-Teachers can:
-
-* Track Student Progress
-* View Exam Participation
-* View Submission Records
-* Send Warnings
-* Send Messages
-
----
-
-## Analytics
-
-* Class Performance
-* Weak Topics
-* Most Attempted Problems
-* Submission Success Rate
-* Active vs Inactive Students
+- Student Verification
+- Teacher Approval Workflow
+- Coding Judge API
+- Live Coding Contest
+- Weekly Leaderboard
+- Monthly Rank Reset
+- Analytics Dashboard
+- AI Code Review
+- Placement Module
 
 ---
 
-## Contest Management
+# 👨‍💻 Developer
 
-Teachers can:
+**Anirban Sarkar**
 
-* Create Contests
-* Add Problems
-* Schedule Start/End Time
-* View Rankings
-* Announce Winners
+B.Tech Computer Science & Engineering
+
+Passionate about Full Stack Development, Java, and Scalable Web Applications.
 
 ---
 
-# 7. Sub Admin Dashboard (College Level)
+# 📜 License
 
-Typically assigned to:
-
-* HOD
-* Department Coordinator
-* College Administrator
-
----
-
-## Teacher Management
-
-* View Pending Teacher Requests
-* Verify Teacher Information
-* Approve Teacher
-* Reject Teacher
-* Suspend Teacher
-* Remove Teacher
-
-Track:
-
-* Exams Created
-* Problems Added
-* Activity Statistics
-
----
-
-## Student Management
-
-View:
-
-* All Students
-* Department-wise Students
-* Year-wise Students
-
-Features:
-
-* Search
-* Filter
-* Bulk Import via CSV
-
----
-
-## College Analytics
-
-* Overall College Performance
-* Top Performing Students
-* Most Active Teachers
-* Department Comparison
-* Contest Participation Rate
-
----
-
-## Notifications
-
-Send announcements to:
-
-* All Teachers
-* All Students
-* Specific Departments
-
----
-
-## College Settings
-
-* College Name
-* Logo
-* Departments
-* Academic Year Settings
-* Allowed Email Domain
-
-Example:
-
-Only users with:
-
-@college.edu
-
-can register.
-
----
-
-# 8. Super Admin Dashboard (Platform Owner)
-
-## Platform Monitoring
-
-View:
-
-* Total Students
-* Total Teachers
-* Total Problems
-* Total Exams
-* Total Contests
-* Server Status
-* Last 24 Hour Registrations
-
----
-
-## Sub Admin Management
-
-* Create Sub Admin
-* Assign College
-* Reset Password
-* Remove Sub Admin
-* View Last Login
-
----
-
-## Security Control
-
-* Login Attempts
-* Failed Login Alerts
-* Audit Logs
-* Ban/Unban Users
-* Suspicious Activity Monitoring
-
----
-
-## Platform Settings
-
-* Platform Name
-* College Name
-* Logo
-* Allowed Email Domains
-* Registration Enable/Disable
-* Maintenance Mode
-* Credits Section
-
----
-
-## Super Admin Profile
-
-* Profile Picture
-* Change Password
-* Last Login
-* Secret Admin URL
-* Platform Owner Badge
-
----
-
-# Technical Requirements
-
-Frontend:
-
-* Next.js / React
-* Tailwind CSS
-* Responsive Design
-
-Backend:
-
-* Node.js + Express.js
-* REST API
-
-Database:
-
-* PostgreSQL 
-
-Authentication:
-
-* JWT
-* OTP Email Verification
-
-Cloud:
-
-* Firebase (optional)
-* AWS / Vercel
-
-Other Features:
-
-* Role-Based Access Control (RBAC)
-* Real-Time Notifications
-* Secure Password Hashing
-* Leaderboard System
-* Automated Monthly Rank Reset
-* Exam Timer System
-* Coding Judge Integration (Judge0 API or custom compiler service)
-
-Goal:
-Create a complete college-level coding practice, examination, ranking, and academic monitoring platform that supports multiple colleges and thousands of students while maintaining secure authentication, performance tracking, and role-based administration.
+This project is developed for educational purposes.
